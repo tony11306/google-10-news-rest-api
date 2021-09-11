@@ -36,5 +36,6 @@ api.add_resource(TenNews, '/ten_news/<string:keyword>')
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
     app.config['JSONIFY_MINETYPE'] = 'application/json;charset=utf-8'
+    app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
     print(f'\nstarting time: {datetime.datetime.now()}\n')
     app.run(host=DELPOY_HOST, port=PORT)
